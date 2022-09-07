@@ -49,4 +49,4 @@ app.use('/api/users/', users)
 app.use('/api/comments/', comments)
 
 //Paleidžiame serverį
-app.listen(PROCESS.ENV.PORT || 3000)
+app.listen(process.env.PORT || 3000)
