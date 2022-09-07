@@ -35,10 +35,6 @@ app.use(session({
     }
 }))
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve('./index.html'))
-})
-
 //Priskiriame posts kontrolerį
 app.use('/api/posts/', posts)
 
@@ -47,6 +43,10 @@ app.use('/api/users/', users)
 
 //Priskiriame comments kontrolerį
 app.use('/api/comments/', comments)
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve('./public/index.html'))
+})
 
 //Paleidžiame serverį
 app.listen(process.env.PORT || 3000)
